@@ -3,6 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserSearchProvider } from './app-provider';
+import { LoadingProvider } from './providers/loading-provider';
+import {FormsModule} from '@angular/forms';
+import { Searchuser } from './providers/http-services/user-service';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HeaderService } from './providers/header';
 
 @NgModule({
   declarations: [
@@ -10,9 +17,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [UserSearchProvider, LoadingProvider, Searchuser, HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
