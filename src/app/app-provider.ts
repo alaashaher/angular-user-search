@@ -18,8 +18,12 @@ export class UserSearchProvider {
             data => {
                 this.StopServiceLoading();
                 this.userData = data.results;
-                console.log('array data', this.userData);
-                // this.FilterArray = this.userData.filter(user => user.name.include(userName));
+                let DATA: any;
+                DATA = this.userData;
+                // let name: any;
+                // name = userName.toLowerCase();
+                this.FilterArray = DATA.filter(user => user.name.startsWith(userName));
+                console.log(this.FilterArray);
             }, error => {
                 this.HandleErrorCodeAndStopServiceLoading(error.error.errorCode, error.error.message);
             }
