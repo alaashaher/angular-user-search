@@ -1,3 +1,6 @@
+body {
+  background-color: #211212 !important;
+}
 .app-div {
   padding-top: 22px;
 
@@ -17,5 +20,37 @@
     background-color: #11002275;
     border: 1px solid #11002275;
     font-size: 18px;
+  }
+
+  .cards-data {
+    margin-top: 20px;
+
+    .row {
+      .col-xs-4 {
+        width: 32.333333%;
+      }
+      .card-data {
+        background-color: #4f4267ab;
+        padding-top: 18px;
+        margin-left: 5px;
+        margin-top: 10px;
+        &:hover {
+          cursor: pointer;
+        }
+        .thumbnail {
+          background-color: beige;
+
+          .caption {
+            h3 , span , a{
+              margin: 7px 0px;
+            }
+            span {
+              font-size: 16px;
+              color: #888484;          
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -1,8 +1,38 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center" class="app-div container">
+<div class="app-div container">
   <div class="row">
-    <input [(ngModel)]="userName" type="text" placeholder="enter the name you want to search" (keyup)="getResult($event)">
+    <input [(ngModel)]="userName" type="text" placeholder="enter the name you want to search"
+      (keyup)="getResult($event)">
     <!-- <button class="search-btn" (click)="getResult()">search</button> -->
+  </div>
+  <div class="cards-data" *ngIf="userSearchProvider.FilterArray.length > 0">
+    <div class="row">
+      <div class="col-xs-4 col-md-3 card-data" *ngFor="let user of userSearchProvider.FilterArray; let i = index">
+        <div class="thumbnail">
+          <div class="caption">
+            <div>
+              <span>username:</span>
+              <h3>{{user.name}}</h3>
+            </div>
+            <div>
+              <span>user url:</span>
+              <br>
+              <a href={{user.url}}>{{user.url}}</a>
+            </div>
+            <div style="margin-top: 5px;">
+              <span>user height:</span>
+              <br>
+              <p>{{user.height}}</p>
+            </div>
+            <div>
+              <span>user homeworld:</span>
+              <br>
+              <a href={{user.homeworld}}>{{user.homeworld}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>

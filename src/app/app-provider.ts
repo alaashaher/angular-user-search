@@ -17,11 +17,12 @@ export class UserSearchProvider {
         this.searchuser.SearchUser().subscribe(
             data => {
                 this.StopServiceLoading();
+
+                // let name: any;
+                // name = userName.toLowerCase();
                 this.userData = data.results;
                 let DATA: any;
                 DATA = this.userData;
-                // let name: any;
-                // name = userName.toLowerCase();
                 this.FilterArray = DATA.filter(user => user.name.startsWith(userName));
                 console.log(this.FilterArray);
             }, error => {
