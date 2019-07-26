@@ -11,6 +11,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HeaderService } from './providers/header';
 
+// import { DragDropModule } from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -21,6 +23,7 @@ import { HeaderService } from './providers/header';
     FormsModule,
     HttpModule,
     HttpClientModule,
+    // DragDropModule
   ],
   providers: [UserSearchProvider, LoadingProvider, Searchuser, HeaderService],
   bootstrap: [AppComponent]
