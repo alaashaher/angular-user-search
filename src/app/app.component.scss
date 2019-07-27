@@ -1,3 +1,7 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+
 body {
   background-color: #211212 !important;
 }
@@ -13,7 +17,7 @@ body {
   }
 
   .search-btn {
-    margin-left: 10px;
+    // margin-left: 10px;
     width: 86px;
     height: 50px;
     color: #2d064a;

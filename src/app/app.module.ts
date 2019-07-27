@@ -10,6 +10,8 @@ import { Searchuser } from './providers/http-services/user-service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HeaderService } from './providers/header';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -23,6 +25,8 @@ import { HeaderService } from './providers/header';
     FormsModule,
     HttpModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    DragDropModule
     // DragDropModule
   ],
   providers: [UserSearchProvider, LoadingProvider, Searchuser, HeaderService],

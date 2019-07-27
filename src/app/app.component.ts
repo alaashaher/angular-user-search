@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserSearchProvider } from './app-provider';
-// import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -15,18 +15,13 @@ export class AppComponent {
     private userSearchProvider: UserSearchProvider,
   ) { }
   getResult(event: any) {
-    console.log(this.userName);
-    this.userSearchProvider.SearchProducts(this.userName);
+    // console.log(this.userName);
+    let username: any;
+    username = this.userName.toLowerCase();
+    this.userSearchProvider.SearchProducts(username);
+  }
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.userSearchProvider.FilterArray, event.previousIndex, event.currentIndex);
   }
 
-  // drop(event: CdkDragDrop<string[]>) {
-  //   if (event.previousContainer === event.container) {
-  //     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-  //   } else {
-  //     transferArrayItem(event.previousContainer.data,
-  //                       event.container.data,
-  //                       event.previousIndex,
-  //                       event.currentIndex);
-  //   }
-  // }
 }

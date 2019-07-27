@@ -17,13 +17,13 @@ export class UserSearchProvider {
         this.searchuser.SearchUser().subscribe(
             data => {
                 this.StopServiceLoading();
-                console.log(userName.length);
+                // console.log(data.results);
                 if (userName.length !== 0) {
                     this.userData = data.results;
                     let DATA: any;
                     DATA = this.userData;
-                    this.FilterArray = DATA.filter(user => user.name.startsWith(userName));
-                    console.log(this.FilterArray);
+                    this.FilterArray = DATA.filter(user => user.name.toLowerCase().includes(userName));
+                    // console.log(this.FilterArray);
                 } else {
                     this.FilterArray = [];
                 }

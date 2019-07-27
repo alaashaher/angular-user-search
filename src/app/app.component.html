@@ -5,10 +5,9 @@
       (keyup)="getResult($event)">
     <!-- <button class="search-btn" (click)="getResult()">search</button> -->
   </div>
-  <div class="cards-data" *ngIf="userSearchProvider.FilterArray.length > 0">
-    <div class="row">
-      <div class="col-xs-4 col-md-3 card-data" 
-      
+  <div class="cards-data"  *ngIf="userSearchProvider.FilterArray.length > 0">
+    <div class="row" cdkDropList  (cdkDropListDropped)="drop($event)">
+      <div class="col-xs-12 col-sm-6 col-md-3 card-data"  cdkDrag
         *ngFor="let user of userSearchProvider.FilterArray; let i = index">
         <div class="thumbnail">
           <div class="caption">
