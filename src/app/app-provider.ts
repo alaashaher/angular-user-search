@@ -11,7 +11,7 @@ export class UserSearchProvider {
         private searchuser: Searchuser,
     ) {
     }
-
+    // to connect the app with the service
     SearchProducts(userName) {
         this.StartServiceLoading();
         this.searchuser.SearchUser().subscribe(
@@ -22,6 +22,7 @@ export class UserSearchProvider {
                     this.userData = data.results;
                     let DATA: any;
                     DATA = this.userData;
+                    // filter the data that recive from the API
                     this.FilterArray = DATA.filter(user => user.name.toLowerCase().includes(userName));
                     // console.log(this.FilterArray);
                 } else {

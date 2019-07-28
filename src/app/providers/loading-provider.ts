@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LoadingProvider {
-
+    // to make the loagin the appear untill the service run
     private FirstLoadingId: string;
     private HttpLoadingId: string;
     private CheckStopFirstLoading: boolean;

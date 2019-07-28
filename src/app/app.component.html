@@ -3,9 +3,9 @@
   <div class="row">
     <input [(ngModel)]="userName" type="text" placeholder="enter the name you want to search"
       (keyup)="getResult($event)">
-    <!-- <button class="search-btn" (click)="getResult()">search</button> -->
   </div>
   <div class="cards-data"  *ngIf="userSearchProvider.FilterArray.length > 0">
+    <!-- cdkDropList to make the drag and drop -->
     <div class="row" cdkDropList  (cdkDropListDropped)="drop($event)">
       <div class="col-xs-12 col-sm-6 col-md-3 card-data"  cdkDrag
         *ngFor="let user of userSearchProvider.FilterArray; let i = index">

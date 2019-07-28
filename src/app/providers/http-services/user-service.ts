@@ -7,9 +7,9 @@ import { HeaderService } from '../header';
 export class Searchuser {
 
   constructor(public http: HttpClient, private headerService: HeaderService
-    // , private httpServiceFormObject: HttpServiceFormObject
     ) { }
 
+    // to call the API to get the data
   SearchUser(): Observable<any> {
     // tslint:disable-next-line:max-line-length
     return this.http.get('https://swapi.co/api/people/', { headers: this.headerService.getHeaderJson() })
